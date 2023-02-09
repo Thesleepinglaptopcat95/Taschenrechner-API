@@ -1,1 +1,61 @@
-console.log("hello world")
+// Function to calculate the sum of any number of terms for natural numbers
+function add(...terms) {
+    let sum = 0;
+    for (let term of terms) {
+        sum += term;
+    }
+    return sum;
+}
+
+// Function to calculate the difference of any number of terms for natural numbers
+function subtract(...terms) {
+    let diff = terms[0];
+    for (let i = 1; i < terms.length; i++) {
+        diff -= terms[i];
+    }
+    return diff;
+}
+
+// Function to calculate the product of any number of terms for natural numbers
+function multiply(...terms) {
+    let product = 1;
+    for (let term of terms) {
+        product *= term;
+    }
+    return product;
+}
+
+// Function to calculate the quotient of any number of terms for natural numbers
+function divide(...terms) {
+    let quotient = terms[0];
+    for (let i = 1; i < terms.length; i++) {
+        quotient /= terms[i];
+    }
+    return quotient;
+}
+
+// Function to calculate the sum of any number of terms for complex numbers
+function complexSum(...terms) {
+    let sum = { real: 0, imag: 0 };
+    for (let term of terms) {
+        sum.real += term.real;
+        sum.imag += term.imag;
+    }
+    return sum;
+}
+
+// Function to calculate the difference of any number of terms for complex numbers
+function complexSubtract(...terms) {
+    let diff = { real: terms[0].real, imag: terms[0].imag };
+    for (let i = 1; i < terms.length; i++) {
+        diff.real -= terms[i].real;
+        diff.imag -= terms[i].imag;
+    }
+    return diff;
+}
+
+// Function to calculate the product of any number of terms for complex numbers
+function complexMultiply(...terms) {
+    let product = { real: 1, imag: 0 };
+    for (let term of terms) {
+        product.real
