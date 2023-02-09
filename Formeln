@@ -1,61 +1,90 @@
-// Function to calculate the sum of any number of terms for natural numbers
-function add(...terms) {
-    let sum = 0;
-    for (let term of terms) {
-        sum += term;
-    }
-    return sum;
-}
+///Formeln 
 
-// Function to calculate the difference of any number of terms for natural numbers
-function subtract(...terms) {
-    let diff = terms[0];
-    for (let i = 1; i < terms.length; i++) {
-        diff -= terms[i];
-    }
-    return diff;
-}
 
-// Function to calculate the product of any number of terms for natural numbers
-function multiply(...terms) {
-    let product = 1;
-    for (let term of terms) {
-        product *= term;
-    }
-    return product;
-}
 
-// Function to calculate the quotient of any number of terms for natural numbers
-function divide(...terms) {
-    let quotient = terms[0];
-    for (let i = 1; i < terms.length; i++) {
-        quotient /= terms[i];
-    }
-    return quotient;
-}
+///Addition Zahlen und Terme
+function addition(x, z) {
+  return x + z;
+} 
 
-// Function to calculate the sum of any number of terms for complex numbers
-function complexSum(...terms) {
-    let sum = { real: 0, imag: 0 };
-    for (let term of terms) {
-        sum.real += term.real;
-        sum.imag += term.imag;
-    }
-    return sum;
-}
 
-// Function to calculate the difference of any number of terms for complex numbers
-function complexSubtract(...terms) {
-    let diff = { real: terms[0].real, imag: terms[0].imag };
-    for (let i = 1; i < terms.length; i++) {
-        diff.real -= terms[i].real;
-        diff.imag -= terms[i].imag;
-    }
-    return diff;
-}
 
-// Function to calculate the product of any number of terms for complex numbers
-function complexMultiply(...terms) {
-    let product = { real: 1, imag: 0 };
-    for (let term of terms) {
-        product.real
+///Subtraktion Zahlen und Terme
+
+function subtraction(x, z) {
+    return x - z;
+  } 
+
+///Multiplikation von Zahlen und Termen
+  function multiplikation(x, z) {
+    return x * z;
+  } 
+
+//Dividieren von Zahlen und Termen
+
+function division(x, z) {
+    return x / z;
+  } 
+
+// // Addition von Termen komplexen Zahlen  ===> noch nicht funktionsfähig
+// function complexAddition(terms) {
+//     let result = {
+//       real: 0,
+//       imag: 0
+//     };
+  
+//     terms.forEach(term => {
+//       result.real += term.real;
+//       result.imag += term.imag
+//     });
+  
+//     return result;
+//   }
+
+//  ///Subtraktion zum lösen von Termen mit komplexen Zahlen 
+ 
+// function subtractComplex(...terms) {
+//     let result = terms[0];
+//   for (let i = 1; i < terms.length; i++) {
+//       result = {
+//         real: result.real - terms[i].real,
+//         imaginary: result.imaginary - terms[i].imaginary
+//       };
+//     }
+  
+
+//     return result;
+//   }
+
+
+//  ///Multiplikation zum lösen von Termen mit komplexer Zahlen
+//  function multiplyComplex(a, b) {
+//     let real = a.real * b.real - a.imag * b.imag;
+//     let imag = a.real * b.imag + a.imag * b.real;
+//     return {real, imag};
+//   }
+  
+//   function multiplyNComplex(terms) {
+//     let result = terms[0];
+//     for (let i = 1; i < terms.length; i++) {
+//       result = multiplyComplex(result, terms[i]);
+//     }
+//     return result;
+//   }
+
+// // Division zum lösen von Termen mit komplexer Zahlen
+// const divideComplex = (terms) => {
+//     let result = terms[0];
+//     for (let i = 1; i < terms.length; i++) {
+//       let denom = terms[i].real * terms[i].real + terms[i].imag * terms[i].imag;
+//       result = {
+//         real: result.real * terms[i].real + result.imag * terms[i].imag,
+//         imag: result.imag * terms[i].real - result.real * terms[i].imag
+//       }
+//       result = {
+//         real: result.real / denom,
+//         imag: result.imag / denom
+//       }
+//     }
+//     return result;
+//   };
