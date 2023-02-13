@@ -26,65 +26,76 @@ function division(x, z) {
     return x / z;
   } 
 
-// // Addition von Termen komplexen Zahlen  ===> noch nicht funktionsfähig
-// function complexAddition(terms) {
-//     let result = {
-//       real: 0,
-//       imag: 0
-//     };
+// Definition einer Funktion für Addition von Vektoren
+function vectorAdd(vector1, vector2) {
+  // Erstellen eines neuen Vektors
+  let resultVector = [];
+
+  // Prüfen, ob beide Vektoren die gleiche Länge haben
+  if (vector1.length !== vector2.length) {
+    return 'Die Vektoren haben nicht die gleiche Länge!';
+  }
   
-//     terms.forEach(term => {
-//       result.real += term.real;
-//       result.imag += term.imag
-//     });
-  
-//     return result;
-//   }
+  // Addieren der Elemente der beiden Vektoren und speichern des Ergebnisses im neuen Vektor
+  for (let i = 0; i < vector1.length; i++) {
+    resultVector.push(vector1[i] + vector2[i]);
+  }
 
-//  ///Subtraktion zum lösen von Termen mit komplexen Zahlen 
- 
-// function subtractComplex(...terms) {
-//     let result = terms[0];
-//   for (let i = 1; i < terms.length; i++) {
-//       result = {
-//         real: result.real - terms[i].real,
-//         imaginary: result.imaginary - terms[i].imaginary
-//       };
-//     }
-  
+  // Gib das Ergebnis zurück
+  return resultVector;
+}
 
-//     return result;
-//   }
+// Beispiel:
+// vector1 = [1, 2, 3]
+// vector2 = [4, 5, 6]
 
+// Ausgabe:
+// [5, 7, 9]
 
-//  ///Multiplikation zum lösen von Termen mit komplexer Zahlen
-//  function multiplyComplex(a, b) {
-//     let real = a.real * b.real - a.imag * b.imag;
-//     let imag = a.real * b.imag + a.imag * b.real;
-//     return {real, imag};
-//   }
-  
-//   function multiplyNComplex(terms) {
-//     let result = terms[0];
-//     for (let i = 1; i < terms.length; i++) {
-//       result = multiplyComplex(result, terms[i]);
-//     }
-//     return result;
-//   }
+///Funltion zur Berechnung von Fakultäten
+function fakultaet(n) { 
+  if (n === 0) { 
+    return 1; 
+  } 
+  return n * fakultaet(n-1); 
+} 
+//Beispiel
+//console.log(fakultaet(5)); 
+// Ausgabe: 120
 
-// // Division zum lösen von Termen mit komplexer Zahlen
-// const divideComplex = (terms) => {
-//     let result = terms[0];
-//     for (let i = 1; i < terms.length; i++) {
-//       let denom = terms[i].real * terms[i].real + terms[i].imag * terms[i].imag;
-//       result = {
-//         real: result.real * terms[i].real + result.imag * terms[i].imag,
-//         imag: result.imag * terms[i].real - result.real * terms[i].imag
-//       }
-//       result = {
-//         real: result.real / denom,
-//         imag: result.imag / denom
-//       }
-//     }
-//     return result;
-//   };
+// Funktion zur Berechnung des Kreuzproduktes
+function crossProduct(vec1, vec2) {
+  let x = vec1[1] * vec2[2] - vec1[2] * vec2[1];
+  let y = vec1[2] * vec2[0] - vec1[0] * vec2[2];
+  let z = vec1[0] * vec2[1] - vec1[1] * vec2[0];
+
+  return [x, y, z];
+}
+
+// Beispiel
+//let vec1 = [5, 9, 2];
+//let vec2 = [2, 4, 7];
+
+//let result = crossProduct(vec1, vec2);
+
+///console.log(result); 
+
+///
+
+function potenzRechnung(basis, exponent) {
+  let result = 1;
+  if (exponent > 0) {
+    for (let i = 0; i < exponent; i++) {
+      result *= basis;
+    }
+  } else if (exponent < 0) {
+    for (let i = 0; i > exponent; i--) {
+      result /= basis;
+    }
+  }
+  return result;
+}
+
+// Beispiel
+//let ergebnis = potenzRechnung(5, -2);
+//console.log(ergebnis); 
