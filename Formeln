@@ -30,11 +30,16 @@ function subtraction(x, z) {
 
 /// API Subtraktion 
 app.get('/subtraction/:x/:y', (req, res) => {
-    const x = parseFloat(req.params.x);
-    const y = parseFloat(req.params.y);
-    const result = subtraction(x, y);
-    res.send(`${x} - ${y} = ${result}`)
-  });
+  const x = parseFloat(req.params.x);
+  const y = parseFloat(req.params.y);
+  const result = subtraction(x, y);
+  const response = {
+    x: x,
+    y: y,
+    result: result
+  };
+  res.json(response);
+});
 
   ///Multiplikation von Zahlen und Termen
   function multiplikation(x, z) {
@@ -60,12 +65,11 @@ function division(x, z) {
   };
 
 //API Division  
-app.get('/division/:x/:z', (req, res) => {
-    let x = req.params.x;
-    let z = req.params.z;
-    let result = division(x,z);
-    res.send(`Result of ${x} divided by ${z} is ${result}.`);
-  });
+app.get('/division', (req, res) => {
+  const { x, z } = req.query;
+  const result = division(x, z);
+  res.status(200).send({ result });
+});
 
 // Definition einer Funktion für Addition von Vektoren
 function vectorAdd(vector1, vector2) {
