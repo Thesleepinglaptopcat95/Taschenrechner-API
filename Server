@@ -113,15 +113,28 @@ app.get('/fakultaet/:n', function(req, res){
     'result': result
   });
 });
+
 // Funktion zur Berechnung des Kreuzproduktes
 function Kreuzprodukt(vec1, vec2) {
-    let x = vec1[1] * vec2[2] - vec1[2] * vec2[1];
-    let y = vec1[2] * vec2[0] - vec1[0] * vec2[2];
-    let z = vec1[0] * vec2[1] - vec1[1] * vec2[0];
-  
-    return [x, y, z];
-  };
+  let x = vec1[1] * vec2[2] - vec1[2] * vec2[1];
+  let y = vec1[2] * vec2[0] - vec1[0] * vec2[2];
+  let z = vec1[0] * vec2[1] - vec1[1] * vec2[0];
 
+  return [x, y, z];
+};
+// API für Kreuzprodukte
+app.get('/Kreuzprodukt', (req, res) => {
+  const vec1 = req.query.vec1;
+  const vec2 = req.query.vec2;
+
+  if (!vec1 || !vec2) {
+    return res.status(400).send({ error: 'Kreuzprodukt nicht ermittelbar' });
+  }
+
+  const result = Kreuzprodukt(vec1, vec2);
+
+  return res.status(200).send({ result });
+});
 //Funktion für Potenzrechnung
 function Potenzrechnung(basis, exponent) {
   let result = 1;
