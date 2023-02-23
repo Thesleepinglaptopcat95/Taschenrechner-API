@@ -7,7 +7,7 @@
 <body>
     <script src="Server-und-APIs-fuer-den-Taschenrechner.js"></script>
     <h1>Taschenrechner Subtraktion zweier ganzer Zahlen</h1>
-    <form action="addition" method="get">
+    <form action="subtraction" method="get">
         <label>Nummer 1:</label>
         <input type="number" name="x" />
         <label>Nummer 2:</label>
@@ -20,7 +20,7 @@
             event.preventDefault();
             const x = form.elements.x.value;
             const z = form.elements.z.value;
-            window.location = `http://localhost:5000/addition/${x}/${z}`;
+            window.location = `http://localhost:5000/subtraction/${x}/${z}`;
         });
 </script>
 </body>
