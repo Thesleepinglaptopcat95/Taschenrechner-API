@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taschenrechner</title>
+</head>
+
+<head><h1>Taschenrechner - APIs</h1></head>
+<body>
+    <h2>Liste der API - Aufrufe zu jeweiligen Rechenart </h2>
+    <h3>Funktionierende APIs</h3>
+
+<pre>
+        <strong>http://localhost:5000/division/:x/:z</strong>
+
+Um sich das Ergebnis für die Division zwei ganzer Zahlen anzeigt zu bekommen, schreibt man die zwei Zahlen an Stelle von dem "x" und dem "z".
+Man kann den oberen Link einfach kopieren und in den Browser einfügen. Man sollte vorher aber den Express Server gestartet haben.
+<strong>
+        Beispiel:
+
+        http://localhost:5000/division/10/5
+</strong>
+</pre>
+<pre>
+        <strong>http://localhost:5000/fakultaet/:n</strong>
+
+Um sich die Fakultät ausgeben zu lassen, schreibt man einfach die gewünschte Zahl an der Stelle von "n". 
+Man kann den oberen Link einfach übernehmen und veränder.
+
+<strong>
+        Beispiel:
+        http://localhost:5000/fakultaet/8
+</strong>
+</pre>
+<pre>
+        <strong>http://localhost:5000/delete</strong>
+
+Diesen Link kann man einfach übernehmen und schauen, was dieser ausgibt.
+</pre>
+
+<h4>Nicht funktionierende APIs oder Features.<h4>
+
+<pre>
+        <strong>//localhost:5000/vectorAdd</strong>
+
+Hier funktioniert leider die API nicht, aber im Terminal von Visual Studio kann man die Vectoren angeben und dort werden sie dann addiert.
+<strong>
+        Beispiel: 
+        vector1 = [8, 5, 3]
+        vector2 = [2, 5, 6]
+ 
+        und bekommt dann [2, 5, 6] raus.
+</strong>
+</pre>
+<pre>
+        http://localhost:5000/Kreuzprodukt
+
+Wenn man den Link abruft, zeigt dieser einen Error an, da keine Vectoren geben sind, aber auch im Link nicht eingefügt werden können.
+Die Funktion ist leider noch sehr verbuggt.
+Wenn man das Kreuzprodukt erfahren möchte, muss man direkt im Code selber in Zeile 126 und 127 die Vektoren eingeben und den Server neustarten. 
+
+<strong>Feature gestrichen.</strong>
+
+
+         http://localhost:5000/api/potenzrechnung
+
+
+Liefert einen Wert aus, aber mehr auch nicht. Ebenso verbuggt. 
+
+
+
+<strong>Feature gestrichen</strong>
+</pre>
+
+     
+        
+
+</body>
