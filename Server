@@ -1,4 +1,4 @@
-///Server
+//Server
 // Express Server
 
 const express = require('express');
@@ -122,6 +122,13 @@ function Kreuzprodukt(vec1, vec2) {
 
   return [x, y, z];
 };
+
+// Eingabe um das Kreuzprodukt heraus zu finden
+//let vec1 = [x1, y1, z1]; 
+//let vec2 = [x2, y2, z2]; 
+//let crossProduct = Kreuzprodukt(vec1, vec2); 
+//console.log(crossProduct);
+
 // API für Kreuzprodukte
 app.get('/Kreuzprodukt', (req, res) => {
   const vec1 = req.query.vec1;
@@ -135,6 +142,7 @@ app.get('/Kreuzprodukt', (req, res) => {
 
   return res.status(200).send({ result });
 });
+
 //Funktion für Potenzrechnung
 function Potenzrechnung(basis, exponent) {
   let result = 1;
@@ -147,8 +155,8 @@ function Potenzrechnung(basis, exponent) {
       result /= basis;
     }
   }
-  return result;
-};  
+  console.log(result);
+} 
 
 // API Potenzrechnung
 app.get('/api/potenzrechnung', (req, res) => {
