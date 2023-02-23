@@ -24,9 +24,7 @@ app.get('/addition/:x/:z', (req, res) => {
 ///Subtraktion Zahlen und Terme
 
 function subtraction(c, d) {
-  console.log("das ist das x"+c);
-  console.log("das ist das z"+d);
-return c - d;
+ return c - d;
 }; 
 
 /// API Subtraktion 
