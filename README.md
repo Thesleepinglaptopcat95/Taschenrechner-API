@@ -31,6 +31,7 @@ Das Frontend/ Browser
 
 Betriebsanleitung der Taschenrechner-API mit Besipielen
 
+Zu erst muss man den Server starten, indem man in Visuel Studio  die Datei Server.js aufruft und dann oben auf „Run“ geht und Debugging starten drückt.
   
 Frontend – Anleitung für die Addition, Subtraktion und Multiplikation
 
